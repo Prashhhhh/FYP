@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+import django_heroku
 
 from pathlib import Path
 import cloudinary
@@ -137,17 +138,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-# cloudinary.config(
-#     cloud_name="blankc",
-#     api_key="466946882844141",
-#     api_secret="B1CfGvlIMd8WS-wnwag_pkJpJfE",
-#     secure=True
-# )
-
-cloudinary.config(
-    cloud_name="fyp22",
-    api_key="945958851243524",
-    api_secret="Q5riJc93ozMSrh_PJslvz-g1xZw"
+cloudinary.config( 
+  cloud_name = "dws1atomv", 
+  api_key = "784735767331375", 
+  api_secret = "1w-XgU2nsapYPGyfOwww-Kzj-4U" 
 )
 
 ALLOWED_HOSTS = ["*"]
@@ -155,3 +149,6 @@ ALLOWED_HOSTS = ["*"]
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5500"
 ]
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
